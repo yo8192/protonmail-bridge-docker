@@ -1,5 +1,9 @@
+# I don't trust carlosedp/golang, I don't need riscv64 + that it doesn't work
+# anyway as different glibc version than ubuntu:focal used for the final image:
+# use the default golang image instead:
 # Use carlosedp/golang for riscv64 support
-FROM carlosedp/golang:1.18 AS build
+#FROM carlosedp/golang:1.18 AS build
+FROM golang:1.18 AS build
 
 # Install dependencies
 RUN apt-get update && apt-get install -y git build-essential libsecret-1-dev
